@@ -14,6 +14,13 @@ extension HomeView: View {
   
   var body: some View {
     TabView {
+      LearnView()
+        .tabItem({
+          VStack {
+            Image(systemName: "bookmark")
+            Text("Learn")
+          }
+        }).tag(0)
       PracticeView()
         .tabItem({
           VStack {
@@ -21,7 +28,7 @@ extension HomeView: View {
             Text("Challenge")
           }
         })
-        .tag(0)
+        .tag(1)
       ProgressView()
         .tabItem({
           VStack {
@@ -29,7 +36,7 @@ extension HomeView: View {
             Text("Progress")
           }
         })
-        .tag(1)
+        .tag(2)
       ProfileView()
         .tabItem({
           VStack {
@@ -37,7 +44,7 @@ extension HomeView: View {
             Text("Profile")
           }
         })
-        .tag(2)
+        .tag(3)
     }
     .accentColor(.orange)
   }
